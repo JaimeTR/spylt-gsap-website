@@ -3,8 +3,16 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
+import { useEffect, useRef } from "react";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onLoaded: () => void;
+  triggerAnimation: boolean;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ onLoaded, triggerAnimation }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
   const isMobile = useMediaQuery({
     query: "(max-width: 768px)",
   });
@@ -13,54 +21,90 @@ const HeroSection = () => {
     query: "(max-width: 1024px)",
   });
 
-  useGSAP(() => {
-    const titleSplit = SplitText.create(".hero-title", {
-      type: "chars",
-    });
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log("HeroSection: Safety timeout triggered");
+      onLoaded();
+    }, 6000);
+
+    if (isTablet) {
+      clearTimeout(timer);
+      const imgTimer = setTimeout(onLoaded, 5000);
+      return () => clearTimeout(imgTimer);
+    }
+
+    const video = videoRef.current;
+    if (video) {
+      if (video.readyState >= 3) {
+        console.log("HeroSection: Video already loaded");
+        onLoaded();
+        clearTimeout(timer);
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [isTablet, onLoaded]);
+
+  useEffect(() => {
+    if (triggerAnimation && videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play().catch(err => console.log("Video play failed:", err));
+    }
+  }, [triggerAnimation]);
+
+  useGSAP(
+    () => {
+      if (!triggerAnimation) return;
+
+      const titleSplit = SplitText.create(".hero-title", {
+        type: "chars",
+      });
 
     const tl = gsap.timeline({
       delay: 1,
     });
 
-    tl.to(".hero-content", {
-      opacity: 1,
-      y: 0,
-      ease: "power1.inOut",
-    })
-      .to(
-        ".hero-text-scroll",
-        {
-          duration: 1,
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          ease: "circ.out",
-        },
-        "-=0.5"
-      )
-      .from(
-        titleSplit.chars,
-        {
-          yPercent: 200,
-          stagger: 0.02,
-          ease: "power2.out",
-        },
-        "-=0.5"
-      );
+      tl.to(".hero-content", {
+        opacity: 1,
+        y: 0,
+        ease: "power1.inOut",
+      })
+        .to(
+          ".hero-text-scroll",
+          {
+            duration: 1,
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            ease: "circ.out",
+          },
+          "-=0.5"
+        )
+        .from(
+          titleSplit.chars,
+          {
+            yPercent: 200,
+            stagger: 0.02,
+            ease: "power2.out",
+          },
+          "-=0.5"
+        );
 
-    const heroTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".hero-container",
-        start: "1% top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-    heroTl.to(".hero-container", {
-      rotate: 7,
-      scale: 0.9,
-      yPercent: 30,
-      ease: "power1.inOut",
-    });
-  });
+      const heroTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".hero-container",
+          start: "1% top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+      heroTl.to(".hero-container", {
+        rotate: 7,
+        scale: 0.9,
+        yPercent: 30,
+        ease: "power1.inOut",
+      });
+    },
+    { dependencies: [triggerAnimation] }
+  );
 
   return (
     <section className="bg-main-bg">
@@ -68,7 +112,17 @@ const HeroSection = () => {
         {isTablet ? (
           <>
             {isMobile && (
-              <Image src="/images/hero-bg.webp" alt="hero-bg" width={3000} height={3000} className="absolute bottom-40 size-full object-cover" />
+              <Image
+                src="/images/hero-bg.webp"
+                alt="hero-bg"
+                width={3000}
+                height={3000}
+                className="absolute bottom-40 size-full object-cover"
+                onLoad={() => {
+                  console.log("HeroSection: Mobile BG loaded");
+                  onLoaded();
+                }}
+              />
             )}
             <Image
               src="/images/hero-img.webp"
@@ -76,10 +130,32 @@ const HeroSection = () => {
               width={500}
               height={500}
               className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto"
+              onLoad={() => {
+                if (!isMobile) {
+                  console.log("HeroSection: Tablet/Desktop Img loaded");
+                  onLoaded();
+                }
+              }}
             />
           </>
         ) : (
-          <video src="/videos/herobg.mp4" autoPlay muted playsInline className="absolute inset-0 w-full h-full object-cover" />
+          <video
+            ref={videoRef}
+            src="/videos/herobg.mp4"
+            autoPlay
+            muted
+            playsInline
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover"
+            onCanPlayThrough={() => {
+              console.log("HeroSection: Video can play through");
+              onLoaded();
+            }}
+            onLoadedData={() => {
+              console.log("HeroSection: Video data loaded");
+              onLoaded();
+            }}
+          />
         )}
         <div className="hero-content opacity-0">
           <div className="overflow-hidden">
