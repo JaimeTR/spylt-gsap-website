@@ -43,10 +43,10 @@ const NutritionSection = () => {
         ease: "power2.out",
       })
       .from(paragraphSplit.words, {
-        yPercent: 300,
+        yPercent: 200,
         rotate: 3,
         ease: "power1.inOut",
-        duration: 1,
+        duration: 0.8,
         stagger: 0.01,
       });
 

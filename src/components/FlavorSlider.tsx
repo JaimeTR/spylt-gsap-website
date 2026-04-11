@@ -23,6 +23,7 @@ const FlavorSlider = () => {
           end: `+=${scrollAmount + 1500}px`,
           scrub: true,
           pin: true,
+          snap: 1 / (flavorList.length - 1),
         },
       });
 

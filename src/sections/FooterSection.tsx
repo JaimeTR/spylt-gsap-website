@@ -7,7 +7,7 @@ const FooterSection = () => {
   });
 
   return (
-    <section className="footer-section">
+    <footer className="footer-section">
       <Image src="/images/footer-dip.webp" alt="" width={3000} height={3000} className="w-full object-cover -translate-y-1" />
 
       <div className="2xl:h-[110dvh] relative md:pt-[20vh] pt-[10vh]">
@@ -69,7 +69,7 @@ const FooterSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 
