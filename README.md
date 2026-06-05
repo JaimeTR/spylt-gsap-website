@@ -1,65 +1,64 @@
-# 🎨 Spylt — GSAP Landing Page
+# Jaime Tarazona — Portafolio de Proyectos
 
-A visually immersive and responsive landing page built with **Next.js**, **Tailwind CSS**, and **GSAP**. Inspired by award-winning web experiences, Spylt showcases scroll-triggered animations, parallax effects, clip-path transitions, and text reveals to deliver an engaging frontend animation showcase.
-
----
-
-## 🛠️ Tech Stack
-
-- **Framework:** Next.js (React)
-- **Styling:** Tailwind CSS
-- **Animations:** GSAP (ScrollTrigger, ScrollSmoother, timelines)
-- **Responsive:** react-responsive
+Portafolio web premium de **Jaime Tarazona**, Full Stack Developer, WordPress Expert y AI Automation Specialist. Galería interactiva de proyectos con panel de administración integrado.
 
 ---
 
-## ✨ Features
+## Tecnologías
 
-- 🎯 Scroll-triggered animations with GSAP’s `ScrollTrigger`
-- 🪄 Parallax effects and pinning transitions
-- 🔍 Advanced `clip-path` and reveal effects
-- 🔁 Timeline-based animation orchestration
-- ⚡ Smooth scrolling experience
-- 📱 Fully responsive and mobile-friendly
-- 🧠 Performance-focused layout
+- **Framework:** Next.js 15 (App Router)
+- **Estilos:** Tailwind CSS 4
+- **Animaciones:** Framer Motion, GSAP, tsparticles
+- **Iconos:** Lucide React, React Icons
+- **Lenguaje:** TypeScript
 
 ---
 
-## 📸 Screenshots
+## Funcionalidades
 
-   <img src="public/preview/preview1.png" >
-  <br /> 
-
-   <img src="public/preview/preview2.png" >
-  <br /> 
- 
-   <img src="public/preview/preview3.png" >
-  <br /> 
- 
-   <img src="public/preview/preview4.png" >
-
----
-
-
-## 🚀 Live Demo
-
-[🔗 View Live Demo](https://spylt-gsap-website.vercel.app)
-
+- Pantalla de bienvenida animada con transiciones fluidas
+- Galería de proyectos con filtrado por categorías
+- Visualizador de proyectos con iframe o apertura externa
+- Panel de administración (`/admin`) con CRUD de proyectos
+- API para carga de imágenes y gestión de proyectos
+- Fondo interactivo de partículas
+- Contador animado de estadísticas
+- Sección de contacto con enlaces sociales
+- Totalmente responsive y mobile-friendly
 
 ---
 
-## 📦 Getting Started
+## Deployment
 
-### 1. Clone the Repo
+Configurado con `output: "standalone"` para deploy en Node.js (Hostinger, VPS, etc.).
 
 ```bash
-git clone https://github.com/ahmedragab15/spylt-gsap-website
-cd spylt-gsap-website-main
+npm run build
+# El output estara en .next/standalone/
 ```
 
-### 2. Install Decencies then Start
+Para correr en produccion:
+```bash
+cp -r .next/static .next/standalone/.next/static
+cp -r public .next/standalone/public
+cd .next/standalone && node server.js
+```
+
+---
+
+## Desarrollo Local
 
 ```bash
+git clone https://github.com/JaimeTR/portafoliodeproyectos.jaimetr.dev
+cd portafoliodeproyectos.jaimetr.dev
 npm install
 npm run dev
 ```
+
+Abrir [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Live Demo
+
+[portafoliodeproyectos.jaimetr.dev](https://portafoliodeproyectos.jaimetr.dev)
