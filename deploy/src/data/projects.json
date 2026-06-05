@@ -1,0 +1,350 @@
+[
+  {
+    "id": 1,
+    "title": "Corporate WP Theme",
+    "description": "Tema de WordPress premium desarrollado a medida para corporaciones y empresas B2B.",
+    "image": "/projects/wordpress.png",
+    "category": "Webs",
+    "technologies": [
+      "WordPress",
+      "Elementor",
+      "Desarrollo de Temas",
+      "Diseño Web",
+      "Firebase"
+    ],
+    "url": "https://jaimetr.dev"
+  },
+  {
+    "id": 101,
+    "title": "Devmarkpe",
+    "description": "Desarrollo de página web corporativa moderna enfocada en la conversión y presentación de servicios.",
+    "image": "/projects/Gemini_Generated_Image_ua2jdxua2jdxua2j.png",
+    "category": "Webs",
+    "technologies": [
+      "WordPress",
+      "Elementor",
+      "Diseño Web"
+    ],
+    "url": "https://www.devmarkpe.com/"
+  },
+  {
+    "id": 102,
+    "title": "Urbanz",
+    "description": "Sitio web desarrollado en WordPress para el sector inmobiliario y de arquitectura.",
+    "image": "/projects/urbanz.png",
+    "category": "Webs",
+    "technologies": [
+      "WordPress",
+      "Elementor",
+      "PHP",
+      "MySQL"
+    ],
+    "url": "https://www.urbanz.es/"
+  },
+  {
+    "id": 100,
+    "title": "Memorandum",
+    "description": "Desarrollo y diseño de sitio web corporativo interactivo e informativo.",
+    "image": "/projects/memorandum.png",
+    "category": "Webs",
+    "technologies": [
+      "Next.js",
+      "TailwindCSS",
+      "Framer Motion",
+      "GSAP"
+    ],
+    "url": "https://memorandum.es/",
+    "allowIframe": false
+  },
+  {
+    "id": 2,
+    "title": "Abogados Law Firm",
+    "description": "Sitio web corporativo para firma de abogados con reserva de citas online.",
+    "image": "/projects/wordpress.png",
+    "category": "Webs",
+    "technologies": [
+      "WordPress",
+      "PHP",
+      "SEO",
+      "Elementor"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 3,
+    "title": "Hospital Management",
+    "description": "Sistema web integral para gestión de pacientes, médicos y citas de hospital.",
+    "image": "/projects/saas.png",
+    "category": "Sistemas Web",
+    "technologies": [
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 4,
+    "title": "EduPortal Pro",
+    "description": "Plataforma e-learning para la gestión de cursos, alumnos y pagos mensuales.",
+    "image": "/projects/saas.png",
+    "category": "Sistemas Web",
+    "technologies": [
+      "React",
+      "Express",
+      "MongoDB",
+      "AWS"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 5,
+    "title": "CRM Memorandum",
+    "description": "Sistema CRM para gestión comercial, automatización de ventas y seguimiento de clientes.",
+    "image": "/projects/crm.png",
+    "category": "Software a Medida",
+    "technologies": [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "OpenAI"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 6,
+    "title": "Fintech SaaS Platform",
+    "description": "Plataforma SaaS para gestión financiera personal con integraciones bancarias.",
+    "image": "/projects/saas.png",
+    "category": "Software a Medida",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Stripe"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 7,
+    "title": "E-Commerce Ultra",
+    "description": "Tienda en línea de alto rendimiento con pasarelas de pago y gestión de inventario.",
+    "image": "/projects/ecommerce.png",
+    "category": "Ecommerce",
+    "technologies": [
+      "Next.js",
+      "TailwindCSS",
+      "Prisma",
+      "Vercel"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 8,
+    "title": "Sneakers Store",
+    "description": "Tienda de zapatillas de colección con subastas en tiempo real y stock dinámico.",
+    "image": "/projects/ecommerce.png",
+    "category": "Ecommerce",
+    "technologies": [
+      "Shopify",
+      "Liquid",
+      "React",
+      "Node.js"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 9,
+    "title": "Smart Dashboard AI",
+    "description": "Dashboard analítico con inteligencia artificial predictiva para toma de decisiones.",
+    "image": "/projects/dashboard.png",
+    "category": "Inteligencia Artificial",
+    "technologies": [
+      "Next.js",
+      "Python",
+      "TensorFlow",
+      "AWS"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 10,
+    "title": "DocuChat Assistant",
+    "description": "Chatbot entrenado con bases de datos documentales para servicio al cliente automático.",
+    "image": "/projects/dashboard.png",
+    "category": "Inteligencia Artificial",
+    "technologies": [
+      "OpenAI",
+      "LangChain",
+      "Python",
+      "React"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 11,
+    "title": "AutoFlow Marketing",
+    "description": "Sistema de automatización de flujos de marketing y correos electrónicos.",
+    "image": "/projects/marketing.png",
+    "category": "Automatizaciones",
+    "technologies": [
+      "Vue.js",
+      "Express",
+      "MongoDB",
+      "Make"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 12,
+    "title": "Zapier Connect Hub",
+    "description": "Integración compleja entre ERP y CRM usando flujos automatizados condicionales.",
+    "image": "/projects/marketing.png",
+    "category": "Automatizaciones",
+    "technologies": [
+      "Zapier",
+      "Webhooks",
+      "Node.js",
+      "APIs"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 13,
+    "title": "SaaS Launchpad",
+    "description": "Landing page de alta conversión para lanzamiento de nuevo software SaaS.",
+    "image": "/projects/marketing.png",
+    "category": "Landing Pages",
+    "technologies": [
+      "Next.js",
+      "Framer Motion",
+      "TailwindCSS"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 14,
+    "title": "Event Promo Page",
+    "description": "Página promocional para congreso de tecnología con cuenta regresiva y formulario.",
+    "image": "/projects/wordpress.png",
+    "category": "Landing Pages",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "GSAP",
+      "JavaScript"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 15,
+    "title": "Crypto Portfolio",
+    "description": "Dashboard para monitorear inversiones en criptomonedas con gráficos avanzados.",
+    "image": "/projects/dashboard.png",
+    "category": "Dashboards",
+    "technologies": [
+      "React",
+      "Chart.js",
+      "CoinGecko API"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 16,
+    "title": "HR Analytics",
+    "description": "Panel de control para métricas de recursos humanos y retención de talento.",
+    "image": "/projects/dashboard.png",
+    "category": "Dashboards",
+    "technologies": [
+      "Vue",
+      "TailwindCSS",
+      "Firebase",
+      "D3.js"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 17,
+    "title": "FitLife Mobile",
+    "description": "Aplicación móvil para seguimiento de rutinas de ejercicio y dietas personalizadas.",
+    "image": "/projects/ecommerce.png",
+    "category": "Apps",
+    "technologies": [
+      "React Native",
+      "Expo",
+      "Firebase",
+      "Redux"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 18,
+    "title": "Delivery FastApp",
+    "description": "App para pedidos de comida a domicilio con seguimiento en tiempo real vía GPS.",
+    "image": "/projects/saas.png",
+    "category": "Apps",
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Google Maps API",
+      "Node.js"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 19,
+    "title": "Banking App Redesign",
+    "description": "Diseño UI/UX completo para modernizar aplicación bancaria móvil.",
+    "image": "/projects/crm.png",
+    "category": "UX/UI",
+    "technologies": [
+      "Figma",
+      "Prototyping",
+      "Wireframing",
+      "User Testing"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 20,
+    "title": "Travel Agency UI",
+    "description": "Diseño de interfaces para plataforma de reserva de viajes y vuelos turísticos.",
+    "image": "/projects/dashboard.png",
+    "category": "UX/UI",
+    "technologies": [
+      "Figma",
+      "Adobe XD",
+      "Design System"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 21,
+    "title": "Payment Gateway API",
+    "description": "Desarrollo de API RESTful robusta para procesar pagos de forma segura y escalable.",
+    "image": "/projects/saas.png",
+    "category": "APIs",
+    "technologies": [
+      "Node.js",
+      "Express",
+      "Stripe",
+      "JWT"
+    ],
+    "url": "https://jaimetarazona.com"
+  },
+  {
+    "id": 22,
+    "title": "Real Estate GraphQL",
+    "description": "API basada en GraphQL para portal inmobiliario con búsquedas complejas.",
+    "image": "/projects/crm.png",
+    "category": "APIs",
+    "technologies": [
+      "GraphQL",
+      "Apollo Server",
+      "Prisma",
+      "PostgreSQL"
+    ],
+    "url": "https://jaimetarazona.com"
+  }
+]

@@ -28,7 +28,6 @@ export default function ProjectGallery() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    // Fetch projects from API
     fetch('/api/projects')
       .then(res => res.json())
       .then(data => setProjectsData(data))

@@ -19,12 +19,10 @@ export async function POST(request: Request) {
   try {
     const newProjects = await request.json();
     
-    // Validar que sea un array
     if (!Array.isArray(newProjects)) {
       return NextResponse.json({ error: "Invalid data format" }, { status: 400 });
     }
 
-    // Guardar los cambios
     await fs.writeFile(dataFilePath, JSON.stringify(newProjects, null, 2), 'utf8');
     
     return NextResponse.json({ success: true, message: "Projects updated successfully" });

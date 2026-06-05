@@ -14,15 +14,12 @@ export async function POST(request: Request) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    // Save to public/projects folder
-    // Ensure the filename is safe or generate a unique one
     const fileName = file.name.replace(/[^a-zA-Z0-9.\-_]/g, '');
     const uploadDir = path.join(process.cwd(), 'public', 'projects');
     const filePath = path.join(uploadDir, fileName);
 
     await fs.writeFile(filePath, buffer);
 
-    // Return the public URL path
     return NextResponse.json({ 
       success: true, 
       imageUrl: `/projects/${fileName}` 
