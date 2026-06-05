@@ -17,6 +17,11 @@
 /.next/
 /out/
 
+# deploy artifacts
+/deploy/
+/portafolio-static/
+*.zip
+
 # production
 /build
 
