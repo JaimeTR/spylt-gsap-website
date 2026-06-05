@@ -35,7 +35,7 @@ export default function AdminPage() {
       localStorage.setItem("spylt_admin_auth", "true");
       setLoginError("");
     } else {
-      setLoginError("Usuario o contrase\u00f1a incorrectos.");
+      setLoginError("Usuario o contraseña incorrectos.");
     }
   };
 
@@ -115,7 +115,7 @@ export default function AdminPage() {
   };
 
   const handleDelete = (id: number) => {
-    if (confirm("\u00bfEst\u00e1s seguro de que quieres eliminar este proyecto?")) {
+    if (confirm("¿Estás seguro de que quieres eliminar este proyecto?")) {
       const newProjects = projects.filter(p => p.id !== id);
       setProjects(newProjects);
       saveToBackend(newProjects);
@@ -162,7 +162,7 @@ export default function AdminPage() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Contrase\u00f1a</label>
+                <label className="block text-sm font-medium text-gray-400 mb-2">Contraseña</label>
                 <input 
                   type="password" 
                   value={password}
@@ -201,7 +201,7 @@ export default function AdminPage() {
               <ArrowLeft className="w-4 h-4" />
               Volver al Portfolio
             </Link>
-            <h1 className="font-heading text-4xl font-bold text-white">Panel de Administraci\u00f3n</h1>
+            <h1 className="font-heading text-4xl font-bold text-white">Panel de Administración</h1>
             <p className="text-gray-400 mt-2">Gestiona todos tus proyectos. Puedes editarlos, reordenarlos o crear nuevos.</p>
           </div>
           <div className="flex gap-3">
@@ -314,7 +314,7 @@ export default function AdminPage() {
 
             <form onSubmit={handleSaveEdit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">T\u00edtulo</label>
+                <label className="block text-sm font-medium text-gray-400 mb-1">Título</label>
                 <input 
                   type="text"
                   required
@@ -325,7 +325,7 @@ export default function AdminPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-1">Descripci\u00f3n</label>
+                <label className="block text-sm font-medium text-gray-400 mb-1">Descripción</label>
                 <textarea 
                   required
                   rows={3}
@@ -337,14 +337,14 @@ export default function AdminPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Categor\u00eda</label>
+                  <label className="block text-sm font-medium text-gray-400 mb-1">Categoría</label>
                   <select 
                     required
                     value={editingProject.category}
                     onChange={e => setEditingProject({...editingProject, category: e.target.value})}
                     className="w-full bg-zinc-800 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-accent appearance-none cursor-pointer"
                   >
-                    <option value="" disabled>Selecciona una categor\u00eda</option>
+                    <option value="" disabled>Selecciona una categoría</option>
                     {[
                       "Webs", "Sistemas Web", "Software a Medida", "Ecommerce", 
                       "Inteligencia Artificial", "Landing Pages", 
@@ -368,7 +368,7 @@ export default function AdminPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-400 mb-2">
-                  Tecnolog\u00edas / Etiquetas
+                  Tecnologías / Etiquetas
                 </label>
                 <div className="flex flex-wrap gap-2">
                   {[
@@ -407,7 +407,7 @@ export default function AdminPage() {
                   })}
                 </div>
                 <div className="mt-3">
-                  <label className="block text-xs font-medium text-gray-500 mb-1">\u00bfFalta una tecnolog\u00eda? A\u00f1\u00e1dela separada por comas:</label>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">¿Falta una tecnología? Añádela separada por comas:</label>
                   <input 
                     type="text"
                     placeholder="Ej. React Native, Supabase..."
@@ -442,7 +442,7 @@ export default function AdminPage() {
                 />
                 <label htmlFor="allowIframe" className="text-sm text-gray-300 cursor-pointer">
                   <strong className="block text-white">Abrir en Ventana Integrada (Iframe)</strong>
-                  Desactiva esto si la web proh\u00edbe incrustaci\u00f3n. Se abrir\u00e1 en una nueva pesta\u00f1a.
+                  Desactiva esto si la web prohíbe incrustación. Se abrirá en una nueva pestaña.
                 </label>
               </div>
 
