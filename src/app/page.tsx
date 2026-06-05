@@ -1,59 +1,29 @@
 "use client";
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/sections/HeroSection";
-import gsap from "gsap";
-import { ScrollTrigger, ScrollSmoother } from "gsap/all";
-import { useGSAP } from "@gsap/react";
-import MessageSection from "@/sections/MessageSection";
-import NutritionSection from "@/sections/NutritionSection";
-import FlavorSection from "@/sections/FlavorSection";
-import BenefitSection from "@/sections/BenefitSection";
-import TestimonialSection from "@/sections/TestimonialSection";
-import FooterSection from "@/sections/FooterSection";
-import { useState, useEffect } from "react";
-import Preloader from "@/components/Preloader";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import WelcomeScreen from "@/components/portfolio/WelcomeScreen";
+import ProjectGallery from "@/components/portfolio/ProjectGallery";
+import ParticlesBackground from "@/components/portfolio/ParticlesBackground";
 
 export default function Home() {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [isPreloaderDone, setIsPreloaderDone] = useState(false);
+  const [showWelcome, setShowWelcome] = useState(true);
 
   useEffect(() => {
-    window.history.scrollRestoration = "manual";
+    // Scroll to top on load
     window.scrollTo(0, 0);
   }, []);
 
-  useGSAP(() => {
-    ScrollSmoother.create({
-      smooth: 3,
-      effects: true,
-    });
-  });
-
   return (
-    <main>
-      <Preloader isLoaded={isVideoLoaded} onFinish={() => setIsPreloaderDone(true)} />
-      <div className={!isPreloaderDone ? "h-screen overflow-hidden opacity-0" : "opacity-100 transition-opacity duration-500"}>
-        <Navbar />
-        <div id="smooth-wrapper">
-          <div id="smooth-content">
-            <HeroSection 
-              onLoaded={() => setIsVideoLoaded(true)} 
-              triggerAnimation={isPreloaderDone} 
-            />
-            <MessageSection />
-            <FlavorSection />
-            <NutritionSection />
-            <div>
-              <BenefitSection />
-              <TestimonialSection />
-            </div>
-            <FooterSection />
-          </div>
-        </div>
-      </div>
+    <main className="min-h-screen bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-zinc-900 via-[#050505] to-black text-foreground font-sans overflow-hidden selection:bg-accent selection:text-white relative">
+      <ParticlesBackground />
+      <AnimatePresence mode="wait">
+        {showWelcome ? (
+          <WelcomeScreen key="welcome" onEnter={() => setShowWelcome(false)} />
+        ) : (
+          <ProjectGallery key="gallery" />
+        )}
+      </AnimatePresence>
     </main>
   );
 }
-
